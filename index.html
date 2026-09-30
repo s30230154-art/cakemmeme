@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Velvet & Whisk | ហាងនំខេកបែបបារាំង & នំខេកកម្មវិធីពិសេសកែច្នៃតាមតម្រូវការ</title>
+  <meta name="description" content="នំខេកប្រណិតសម្រាប់ពិធីមង្គលការ និងកម្មវិធីពិសេសៗ ដុតថ្មីៗរាល់ព្រឹកព្រលឹមដោយប្រើប៊័រ Normandy សុទ្ធ និងសូកូឡាលំដាប់ពិភពលោក។" />
+  <meta name="keywords" content="នំខេក, នំខេកកែច្នៃ, នំមង្គលការ, ហាងនំ, បង្អែមបារាំង, នំខេកខួបកំណើត" />
+  
+  <!-- OpenGraph Meta -->
+  <meta property="og:title" content="Velvet & Whisk | ហាងនំខេកបែបបារាំង & នំខេកកែច្នៃប្រណិត" />
+  <meta property="og:description" content="ទីដែលគ្រប់ស្រទាប់នៃនំ រៀបរាប់នូវរឿងរ៉ាវដ៏ឆ្ងាញ់ពិសា។ ច្នៃនំខេកពិសេសដោយក្តីស្រឡាញ់សុទ្ធសាធ។" />
+  <meta property="og:image" content="assets/images/hero_cake_real.jpg" />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Battambang:wght@300;400;700&family=Kantumruy+Pro:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Siemreap&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="announcement-content">
+      <span class="announcement-badge">ការផ្តល់ជូនពិសេស</span>
+      <span>✨ សេវាដឹកជញ្ជូនត្រជាក់ដោយឥតគិតថ្លៃសម្រាប់ការកម្ម៉ង់ចាប់ពី $80 ឡើងទៅ · ដុតថ្មីៗរៀងរាល់ព្រឹកព្រលឹម</span>
+      <div class="font-theme-picker">
+        <span style="opacity: 0.85; font-size: 0.74rem;">ពុម្ពអក្សរ៖</span>
+        <button class="font-choice-btn active" onclick="setKhmerFont('kantumruy')" title="Kantumruy Pro (ស្រាល & ទំនើប)">Kantumruy</button>
+        <button class="font-choice-btn" onclick="setKhmerFont('siemreap')" title="Siemreap (ស្រទន់ & បុរាណ)">Siemreap</button>
+        <button class="font-choice-btn" onclick="setKhmerFont('battambang')" title="Battambang (ច្បាស់ & ស្អាត)">Battambang</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Primary Navigation -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <!-- Brand Logo -->
+      <a href="#" class="brand-logo">
+        <div class="brand-icon">🎂</div>
+        <div class="brand-text">
+          <span class="brand-name">Velvet & Whisk</span>
+          <span class="brand-tag">ហាងនំប៉័ង & នំខេកបែបបារាំង</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="nav-links">
+        <a href="#catalog" class="nav-link">នំខេកប្រចាំហាង</a>
+        <a href="#builder" class="nav-link">រចនានំផ្ទាល់ខ្លួន</a>
+        <a href="#flavors" class="nav-link">មគ្គុទ្ទេសក៍រសជាតិ</a>
+        <a href="#story" class="nav-link">ប្រវត្តិ និងកេរដំណែល</a>
+        <a href="#reviews" class="nav-link">មតិអតិថិជន</a>
+        <a href="#visit" class="nav-link">ទីតាំង & ម៉ោងបើក</a>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <button class="cart-trigger" onclick="openCartDrawer()" aria-label="មើលកន្ត្រកទំនិញ">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-count-badge">0</span>
+        </button>
+
+        <a href="#builder" class="btn btn-primary" style="display: none; @media(min-width: 900px){display: inline-flex;}">
+          រចនានំផ្ទាល់ខ្លួន
+        </a>
+
+        <!-- Mobile Menu Trigger -->
+        <button class="mobile-toggle" onclick="openMobileNav()" aria-label="បើកម៉ឺនុយរុករក">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Drawer -->
+  <aside class="mobile-nav-drawer" id="mobile-nav-drawer">
+    <button class="mobile-nav-close" onclick="closeMobileNav()">&times;</button>
+    <div class="brand-logo" style="margin-bottom: 20px;">
+      <div class="brand-icon">🎂</div>
+      <div class="brand-text">
+        <span class="brand-name">Velvet & Whisk</span>
+        <span class="brand-tag">ហាងនំប៉័ង & នំខេកបែបបារាំង</span>
+      </div>
+    </div>
+    <div class="mobile-nav-links">
+      <a href="#catalog" onclick="closeMobileNav()">នំខេកប្រចាំហាង</a>
+      <a href="#builder" onclick="closeMobileNav()">រចនានំផ្ទាល់ខ្លួន</a>
+      <a href="#flavors" onclick="closeMobileNav()">មគ្គុទ្ទេសក៍រសជាតិ</a>
+      <a href="#story" onclick="closeMobileNav()">ប្រវត្តិ និងកេរដំណែល</a>
+      <a href="#reviews" onclick="closeMobileNav()">មតិអតិថិជន</a>
+      <a href="#visit" onclick="closeMobileNav()">ទីតាំង & ម៉ោងបើក</a>
+    </div>
+    <a href="#builder" class="btn btn-primary" onclick="closeMobileNav()" style="margin-top: auto;">
+      រចនានំផ្ទាល់ខ្លួន
+    </a>
+  </aside>
+
+  <!-- Main Content Flow -->
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge-wrap">
+            <span class="section-tagline">🌿 សិល្បៈនៃការដុតនំយឺតៗដោយដៃ</span>
+          </div>
+          <h1 class="hero-title">
+            គ្រប់ស្រទាប់នៃនំ រៀបរាប់នូវរឿងរ៉ាវ <span class="title-italic">ដ៏ឆ្ងាញ់ពិសា</span>
+          </h1>
+          <p class="hero-description">
+            នំខេកប្រណិតសម្រាប់កម្មវិធីពិសេស និងបង្អែមបែបប៉ារីសលំដាប់ខ្ពស់ ត្រូវបានច្នៃយ៉ាងផ្ចិតផ្ចង់ជាមួយ
+            ប៊័រ Normandy សុទ្ធ សូកូឡា Valrhona ធម្មជាតិ និងផ្លែប៊ឺរីស្រស់ៗពីចម្ការ។
+          </p>
+
+          <div class="hero-actions">
+            <a href="#catalog" class="btn btn-primary">
+              <span>ស្វែងរកកាតាឡុកនំ</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#builder" class="btn btn-secondary">
+              <span>🎨 រចនានំផ្ទាល់ខ្លួន</span>
+            </a>
+          </div>
+
+          <div class="hero-trust-list">
+            <div class="trust-item">
+              <div class="trust-icon">★</div>
+              <div>
+                <div class="trust-text-title">ពិន្ទុ 4.9 / 5.0</div>
+                <div class="trust-text-sub">ការវាយតម្លៃជាង 2,400+</div>
+              </div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon">🌱</div>
+              <div>
+                <div class="trust-text-title">ធម្មជាតិ 100%</div>
+                <div class="trust-text-sub">គ្មានសារធាតុពណ៌សិប្បនិម្មិត</div>
+              </div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon">🚚</div>
+              <div>
+                <div class="trust-text-title">ដឹកជញ្ជូនត្រជាក់</div>
+                <div class="trust-text-sub">ប្រគល់ជូនដល់ដៃយ៉ាងប្រណិត</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual Showcase -->
+        <div class="hero-visual">
+          <div class="hero-image-card">
+            <img src="assets/images/hero_cake_real.jpg" alt="នំខេកបែបបារាំងតុបតែងផ្លែរ៉ាស្ប៊ឺរី និងមាសកាត់" />
+          </div>
+
+          <!-- Floating Badges -->
+          <div class="floating-badge badge-top">
+            <div class="badge-icon">🍓</div>
+            <div class="badge-info">
+              <h4>ផ្លែប៊ឺរីស្រស់ៗពីចម្ការ</h4>
+              <p>បេះថ្មីៗរៀងរាល់ព្រឹក</p>
+            </div>
+          </div>
+
+          <div class="floating-badge badge-bottom">
+            <div class="badge-icon" style="background: rgba(201, 147, 59, 0.15); color: var(--caramel-gold);">✨</div>
+            <div class="badge-info">
+              <h4>មាស 24k ទទួលទានបាន</h4>
+              <p>ស្រោបតុបតែងដោយដៃផ្ទាល់</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCT CATALOG & FILTER SECTION -->
+    <section class="catalog-section" id="catalog">
+      <div class="container">
+        <div class="catalog-header">
+          <div>
+            <span class="section-tagline">ស្នាដៃហត្ថលេខារបស់យើង</span>
+            <h2 class="section-title">ដុតថ្មីៗសម្រាប់គ្រប់ពេលវេលាដ៏មានន័យ</h2>
+            <p class="section-desc">នំខេកនីមួយៗត្រូវបានដុតយឺតៗក្នុងបរិមាណកំណត់ ដើម្បីរក្សាភាពទន់ល្មើយនៃសាច់នំ និងក្លិនឈ្ងុយនៃប៊័រដ៏សម្បូរបែប។</p>
+          </div>
+
+          <div class="catalog-controls">
+            <div class="search-input-wrap">
+              <span class="search-icon-inside">🔍</span>
+              <input type="text" id="catalog-search" placeholder="ស្វែងរករសជាតិ ឬគ្រឿងផ្សំ..." />
+            </div>
+          </div>
+        </div>
+
+        <!-- Category Filter Pills -->
+        <div class="filter-pills">
+          <button class="filter-pill active" data-category="all">ការច្នៃប្រឌិតទាំងអស់ (12)</button>
+          <button class="filter-pill" data-category="signature">នំខេកហត្ថលេខា</button>
+          <button class="filter-pill" data-category="wedding">នំអាពាហ៍ពិពាហ៍ & ថ្នាក់ធំ</button>
+          <button class="filter-pill" data-category="dietary">សុខភាព & គ្មានជាតិ Gluten</button>
+        </div>
+
+        <!-- Dynamic Product Cards Grid -->
+        <div class="products-grid" id="products-grid">
+          <!-- Populated dynamically by app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE BESPOKE CAKE BUILDER (STUDIO) -->
+    <section class="builder-section" id="builder">
+      <div class="container">
+        <div style="text-align: center; max-width: 680px; margin: 0 auto 50px;">
+          <span class="section-tagline">បន្ទប់រចនានំផ្ទាល់ខ្លួន Interactive Studio</span>
+          <h2 class="section-title">រចនានំខេកក្នុងក្តីស្រមៃសម្រាប់កម្មវិធីរបស់អ្នក</h2>
+          <p class="section-desc" style="margin: 0 auto;">
+            កំណត់ចំនួនថ្នាក់ រសជាតិសាច់នំ ក្រែមបំពេញ ការស្រោប គ្រឿងតុបតែង និងសារជូនពរលើបន្ទះសូកូឡា ជាមួយការបង្ហាញរូបភាពគំរូជាក់ស្តែងភ្លាមៗ។
+          </p>
+        </div>
+
+        <div class="builder-wrapper">
+          <!-- Left: Live Visual Stage -->
+          <div class="builder-stage">
+            <div class="stage-badge">រូបភាពបង្ហាញជាក់ស្តែង Live</div>
+            <div class="stage-sparkles">
+              <div class="sparkle-dot" style="top: 20%; left: 15%;"></div>
+              <div class="sparkle-dot" style="top: 70%; right: 20%; animation-delay: 1.2s;"></div>
+              <div class="sparkle-dot" style="top: 40%; right: 12%; animation-delay: 2.1s;"></div>
+            </div>
+
+            <!-- Cake Presentation Display -->
+            <div class="cake-visual-display">
+              <!-- Cake Topper Icons -->
+              <div class="visual-topper" id="visual-topper">🍓 🫐</div>
+
+              <!-- Cake Assembly -->
+              <div class="visual-cake-assembly" id="visual-assembly">
+                <!-- Tier 2 (Top Tier) -->
+                <div class="tier-top" id="visual-tier-top">
+                  <div class="cake-drips" id="tier-top-drips"></div>
+                </div>
+
+                <!-- Tier 1 (Bottom Tier) -->
+                <div class="tier-bottom" id="visual-tier-bottom">
+                  <div class="cake-drips" id="tier-bottom-drips"></div>
+                  <!-- Inscription Plaque -->
+                  <div class="visual-plaque" id="visual-plaque">"រីករាយថ្ងៃខួបកំណើត!"</div>
+                </div>
+              </div>
+
+              <!-- Marble Cake Pedestal -->
+              <div class="visual-pedestal"></div>
+              <div class="visual-pedestal-stem"></div>
+            </div>
+
+            <!-- Live Price & Add Action -->
+            <div class="stage-summary-bar">
+              <div class="stage-price-tag">
+                <span class="stage-price-label">តម្លៃប៉ាន់ស្មានសរុប</span>
+                <span class="stage-price-amount" id="builder-price-display">$82</span>
+              </div>
+              <button class="btn btn-primary" onclick="addCustomCakeToCart()">
+                <span>បញ្ចូលនំកែច្នៃក្នុងកន្ត្រក ✨</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Right: Builder Option Controls -->
+          <div class="builder-controls">
+            <!-- Navigation Tabs -->
+            <div class="builder-tabs">
+              <button class="builder-tab active" data-step="1" onclick="switchBuilderStep(1)">១. ទំហំ & ថ្នាក់</button>
+              <button class="builder-tab" data-step="2" onclick="switchBuilderStep(2)">២. សាច់នំ (Sponge)</button>
+              <button class="builder-tab" data-step="3" onclick="switchBuilderStep(3)">៣. ក្រែម & ទឹកស្រោច</button>
+              <button class="builder-tab" data-step="4" onclick="switchBuilderStep(4)">៤. គ្រឿងតុបតែង</button>
+              <button class="builder-tab" data-step="5" onclick="switchBuilderStep(5)">៥. ស្លាកជូនពរ</button>
+            </div>
+
+            <!-- Panel 1: Size & Tiers -->
+            <div class="step-panel active" data-panel="1">
+              <h3 style="font-size: 1.25rem; color: var(--primary-espresso); margin-bottom: 6px;">ជ្រើសរើសទំហំ និងចំនួនថ្នាក់នំ</h3>
+              <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 20px;">ជ្រើសរើសទំហំដែលស័ក្តិសមបំផុតសម្រាប់ចំនួនភ្ញៀវរបស់អ្នក។</p>
+              
+              <div class="options-grid">
+                <div class="option-card" data-val="6-inch" onclick="selectBuilderOption('size', '6-inch', 48)">
+                  <div class="option-title">ខ្នាតតូច ៦ អ៊ីញ (១ ថ្នាក់)</div>
+                  <div class="option-desc">ស័ក្តិសមសម្រាប់កម្មវិធីជួបជុំតូចៗ ៤–៦ នាក់។</div>
+                  <div class="option-price-tag">តម្លៃដើម $48</div>
+                </div>
+                <div class="option-card selected" data-val="8-inch" onclick="selectBuilderOption('size', '8-inch', 68)">
+                  <div class="option-title">ខ្នាតបុរាណ ៨ អ៊ីញ (១ ថ្នាក់)</div>
+                  <div class="option-desc">ទំហំពេញនិយមបំផុត ស័ក្តិសមសម្រាប់ ៨–១២ នាក់។</div>
+                  <div class="option-price-tag">តម្លៃដើម $68</div>
+                </div>
+                <div class="option-card" data-val="2-tier" onclick="selectBuilderOption('size', '2-tier', 110)">
+                  <div class="option-title">នំ ២ ថ្នាក់ពិសេស (៦" + ៨")</div>
+                  <div class="option-desc">នំដ៏អស្ចារ្យសម្រាប់មង្គលការ & កម្មវិធីធំ ២០–២៥ នាក់។</div>
+                  <div class="option-price-tag">តម្លៃដើម $110</div>
+                </div>
+              </div>
+
+              <div class="builder-navigation-footer">
+                <span style="font-size: 0.85rem; color: var(--text-muted);">ជំហានទី ១ នៃ ៥</span>
+                <button class="btn btn-dark" onclick="switchBuilderStep(2)">បន្ទាប់: រសជាតិសាច់នំ →</button>
+              </div>
+            </div>
+
+            <!-- Panel 2: Sponge -->
+            <div class="step-panel" data-panel="2">
+              <h3 style="font-size: 1.25rem; color: var(--primary-espresso); margin-bottom: 6px;">ជ្រើសរើសរសជាតិសាច់នំ (Sponge)</h3>
+              <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 20px;">ដុតនំយឺតៗដោយប្រើពងមាន់ចិញ្ចឹមតាមវាលស្មៅធម្មជាតិ និងគ្រឿងផ្សំសុទ្ធ។</p>
+
+              <div class="options-grid">
+                <div class="option-card selected" data-val="vanilla" onclick="selectBuilderOption('sponge', 'vanilla', 0, { name: 'វ៉ានីឡាសុទ្ធ ម៉ាដាហ្គាស្ការ', color: '#FAF3E8' })">
+                  <div class="color-preview-circle" style="background: #FAF3E8;"></div>
+                  <div class="option-title">វ៉ានីឡាសុទ្ធ ម៉ាដាហ្គាស្ការ</div>
+                  <div class="option-desc">សាច់នំទន់ល្មើយឈ្ងុយប៊័រ ផ្សំជាមួយគ្រាប់វ៉ានីឡាធម្មជាតិ។</div>
+                </div>
+                <div class="option-card" data-val="chocolate" onclick="selectBuilderOption('sponge', 'chocolate', 0, { name: 'សូកូឡាខ្មៅបែលហ្ស៊ិក', color: '#3A1E1A' })">
+                  <div class="color-preview-circle" style="background: #3A1E1A;"></div>
+                  <div class="option-title">សូកូឡាខ្មៅបែលហ្ស៊ិក Dark Truffle</div>
+                  <div class="option-desc">សូកូឡា Valrhona 70% រសជាតិដិត ផ្អែមស្រទន់ និងទន់ស្អិត។</div>
+                </div>
+                <div class="option-card" data-val="red-velvet" onclick="selectBuilderOption('sponge', 'red-velvet', 0, { name: 'រ៉េដវែលវ៉េត ក្លិនកុលាប', color: '#7E2231' })">
+                  <div class="color-preview-circle" style="background: #7E2231;"></div>
+                  <div class="option-title">រ៉េដវែលវ៉េត ក្លិនកុលាប Rose</div>
+                  <div class="option-desc">សាច់នំបែបបុរាណផ្សំកាកាវ និងប៊័ទធ័រមីលក៍ ជាមួយក្លិនផ្កាកុលាបស្រាលៗ។</div>
+                </div>
+                <div class="option-card" data-val="matcha" onclick="selectBuilderOption('sponge', 'matcha', 0, { name: 'តែបៃតងជប៉ុន Uji Matcha', color: '#5B7043' })">
+                  <div class="color-preview-circle" style="background: #5B7043;"></div>
+                  <div class="option-title">តែបៃតងជប៉ុន Uji Matcha</div>
+                  <div class="option-desc">ម្សៅតែបៃតងរដូវប្រមូលផលដំបូងពីក្យូតូ ក្លិនឈ្ងុយបែបធម្មជាតិ។</div>
+                </div>
+              </div>
+
+              <div class="builder-navigation-footer">
+                <button class="btn btn-secondary" onclick="switchBuilderStep(1)">← ថយក្រោយ</button>
+                <button class="btn btn-dark" onclick="switchBuilderStep(3)">បន្ទាប់: ក្រែម & ទឹកស្រោច →</button>
+              </div>
+            </div>
+
+            <!-- Panel 3: Fillings & Drips -->
+            <div class="step-panel" data-panel="3">
+              <h3 style="font-size: 1.25rem; color: var(--primary-espresso); margin-bottom: 6px;">ជ្រើសរើសក្រែម & ទឹកស្រោច (Filling & Drip)</h3>
+              <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 20px;">ក្រែមប៊័រទន់រលោង និងទឹកផ្លែឈើខាប់ស្រស់ចម្អិនតាមក្បួនបុរាណ។</p>
+
+              <div class="options-grid">
+                <div class="option-card selected" data-val="caramel" onclick="selectBuilderOption('filling', 'caramel', 6, { name: 'ទឹកស្រោចខារ៉ាមែលប៊័រប្រៃ', color: '#C47E32' })">
+                  <div class="option-title">ទឹកស្រោចខារ៉ាមែលប៊័រប្រៃ Brittany</div>
+                  <div class="option-desc">ខារ៉ាមែលរម្ងាស់យឺតៗជាមួយអំបិលសមុទ្រ Brittany។</div>
+                  <div class="option-price-tag">+$6</div>
+                </div>
+                <div class="option-card" data-val="berry" onclick="selectBuilderOption('filling', 'berry', 6, { name: 'ទឹកស្រោចផ្លែរ៉ាស្ប៊ឺរីព្រៃ', color: '#9E2A2B' })">
+                  <div class="option-title">ទឹកស្រោចផ្លែរ៉ាស្ប៊ឺរីព្រៃ Coulis</div>
+                  <div class="option-desc">ផ្លែប៊ឺរីរដូវក្តៅរសជាតិជូរអែម ជាមួយសម្បកក្រូចឆ្មារ។</div>
+                  <div class="option-price-tag">+$6</div>
+                </div>
+                <div class="option-card" data-val="ganache" onclick="selectBuilderOption('filling', 'ganache', 8, { name: 'ទឹកសូកូឡាហ្គាណាសស្រោប', color: '#2B1614' })">
+                  <div class="option-title">ទឹកសូកូឡាហ្គាណាសស្រោប Dark Truffle</div>
+                  <div class="option-desc">សូកូឡាហ្គាណាសក្តៅឧណ្ហៗស្រោបរំលេចលើស្រទាប់នំ។</div>
+                  <div class="option-price-tag">+$8</div>
+                </div>
+                <div class="option-card" data-val="vanilla-glaze" onclick="selectBuilderOption('filling', 'vanilla-glaze', 4, { name: 'ទឹកស្រោចសូកូឡាស Ivory', color: '#F7E7CE' })">
+                  <div class="option-title">ទឹកស្រោចសូកូឡាស Ivory White</div>
+                  <div class="option-desc">សូកូឡាសរលោងស្រទន់ ក្លិនឈ្ងុយកាកាវសុទ្ធ។</div>
+                  <div class="option-price-tag">+$4</div>
+                </div>
+              </div>
+
+              <div class="builder-navigation-footer">
+                <button class="btn btn-secondary" onclick="switchBuilderStep(2)">← ថយក្រោយ</button>
+                <button class="btn btn-dark" onclick="switchBuilderStep(4)">បន្ទាប់: គ្រឿងតុបតែង →</button>
+              </div>
+            </div>
+
+            <!-- Panel 4: Accents & Toppings -->
+            <div class="step-panel" data-panel="4">
+              <h3 style="font-size: 1.25rem; color: var(--primary-espresso); margin-bottom: 6px;">បន្ថែមគ្រឿងតុបតែងលម្អិត (Accents & Toppings)</h3>
+              <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 20px;">ចំណុចលេចធ្លោបំផុតលើផ្ទៃនំខេកផ្ទាល់ខ្លួនរបស់អ្នក។</p>
+
+              <div class="options-grid">
+                <div class="option-card selected" data-val="berries" onclick="selectBuilderOption('topping', 'berries', 8, { name: 'ផ្លែប៊ឺរីព្រៃស្រស់ចម្រុះ', icon: '🍓 🫐' })">
+                  <div class="option-title">ផ្លែប៊ឺរីព្រៃស្រស់ចម្រុះ</div>
+                  <div class="option-desc">ផ្លែរ៉ាស្ប៊ឺរី ប៊្លែកប៊ឺរី និងស្លឹកជីរអង្កាមស្រស់។</div>
+                  <div class="option-price-tag">+$8</div>
+                </div>
+                <div class="option-card" data-val="gold-leaf" onclick="selectBuilderOption('topping', 'gold-leaf', 12, { name: 'មាសកាត់ 24k & នំម៉ាកាហ្គុង', icon: '👑 ✨' })">
+                  <div class="option-title">មាសកាត់ 24k & នំម៉ាកាហ្គុងបារាំង</div>
+                  <div class="option-desc">តុបតែងបែបប្រណិតជាមួយមាសកាត់ និងនំម៉ាកាហ្គុងអាល់ម៉ុន។</div>
+                  <div class="option-price-tag">+$12</div>
+                </div>
+                <div class="option-card" data-val="flowers" onclick="selectBuilderOption('topping', 'flowers', 10, { name: 'ផ្កាធម្មជាតិអាចទទួលទានបាន', icon: '🌸 🌿' })">
+                  <div class="option-title">ផ្កាធម្មជាតិអាចទទួលទានបាន</div>
+                  <div class="option-desc">ផ្កាកុលាប ផ្កា pansies និងផ្កាឡាវេនឌ័រស្ងួតធម្មជាតិ។</div>
+                  <div class="option-price-tag">+$10</div>
+                </div>
+                <div class="option-card" data-val="hazelnuts" onclick="selectBuilderOption('topping', 'hazelnuts', 6, { name: 'គ្រាប់ផ្លែឈើលីងស្រួយ Praline', icon: '🌰 🍯' })">
+                  <div class="option-title">គ្រាប់ផ្លែឈើលីងស្រួយ Praline</div>
+                  <div class="option-desc">គ្រាប់ភីកាន គ្រាប់ហាហ្សែលណាត់ និងស្ករស្រួយក្រៀម។</div>
+                  <div class="option-price-tag">+$6</div>
+                </div>
+              </div>
+
+              <div class="builder-navigation-footer">
+                <button class="btn btn-secondary" onclick="switchBuilderStep(3)">← ថយក្រោយ</button>
+                <button class="btn btn-dark" onclick="switchBuilderStep(5)">បន្ទាប់: ស្លាកជូនពរ →</button>
+              </div>
+            </div>
+
+            <!-- Panel 5: Plaque Inscription -->
+            <div class="step-panel" data-panel="5">
+              <h3 style="font-size: 1.25rem; color: var(--primary-espresso); margin-bottom: 6px;">សរសេរសារជូនពរលើបន្ទះសូកូឡា (Personalized Plaque)</h3>
+              <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 20px;">គូរសរសេរដោយដៃផ្ទាល់លើបន្ទះសូកូឡាសដែលអាចទទួលទានបាន។</p>
+
+              <div class="custom-input-group">
+                <label for="builder-inscription-input">សារជូនពរផ្ទាល់ខ្លួន (អតិបរមា ២៨ តួអក្សរ)</label>
+                <input type="text" id="builder-inscription-input" maxlength="28" value="រីករាយថ្ងៃខួបកំណើត!" placeholder="ឧ. រីករាយថ្ងៃខួបកំណើត! ឬ Happy Birthday Sophia!" />
+                <span style="font-size: 0.78rem; color: var(--text-light); margin-top: 4px; display: block;">
+                  សរសេរដោយដៃដោយប្រើទឹកសូកូឡាខ្មៅសុទ្ធ ១០០%។ មើលការបង្ហាញលើរូបភាពគំរូជាក់ស្តែង!
+                </span>
+              </div>
+
+              <div style="background: var(--cream-card); border: 1px solid var(--cream-border); border-radius: var(--radius-md); padding: 18px; margin-bottom: 24px;">
+                <h4 style="font-size: 0.95rem; margin-bottom: 6px; color: var(--primary-espresso);">ការវេចខ្ចប់ប្រណិតរួមបញ្ចូលឥតគិតថ្លៃ៖</h4>
+                <p style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.5;">
+                  ✓ ប្រអប់នំរឹងប្រណិតហត្ថលេខា បោះពុម្ពអក្សរមាស<br />
+                  ✓ បន្ទះរក្សាសីតុណ្ហភាពត្រជាក់សម្រាប់គុណភាពស្រស់ល្អបំផុត<br />
+                  ✓ ទៀនក្រមួនឃ្មុំ ៦ ដើម + កាំបិតកាត់នំប្រណិត
+                </p>
+              </div>
+
+              <div class="builder-navigation-footer">
+                <button class="btn btn-secondary" onclick="switchBuilderStep(4)">← ថយក្រោយ</button>
+                <button class="btn btn-primary" onclick="addCustomCakeToCart()">បញ្ចូលនំកែច្នៃក្នុងកន្ត្រក ✨</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FLAVORS & ALLERGEN GUIDE -->
+    <section class="flavor-guide-section" id="flavors">
+      <div class="container">
+        <div style="text-align: center; max-width: 600px; margin: 0 auto 50px;">
+          <span class="section-tagline">គ្រឿងផ្សំសុទ្ធពីធម្មជាតិ</span>
+          <h2 class="section-title">សិល្បៈនៃរសជាតិដ៏វិសេសវិសាល</h2>
+          <p class="section-desc" style="margin: 0 auto;">
+            យើងជឿជាក់ថានំខេកដ៏អស្ចារ្យ កើតចេញពីការជ្រើសរើសគ្រឿងផ្សំយ៉ាងហ្មត់ចត់បំផុត ដោយគ្មានសារធាតុគីមី សារធាតុរក្សាទុក ឬគ្រឿងផ្សំកែច្នៃឡើយ។
+          </p>
+        </div>
+
+        <div class="guide-cards-grid">
+          <div class="guide-card">
+            <div class="guide-card-icon">🍫</div>
+            <h3>Valrhona កាកាវសុទ្ធលំដាប់ខ្ពស់</h3>
+            <p>នាំយកដោយផ្ទាល់ពីសហករណ៍ពាណិជ្ជកម្មយុត្តិធម៌នៅម៉ាដាហ្គាស្ការ និងអេក្វាឌ័រ ផ្តល់នូវជម្រៅរសជាតិកាកាវដិតខ្លាំងដោយគ្មានជាតិជូរខ្លាំង។</p>
+            <div class="dietary-tags">
+              <span class="dietary-tag">ពាណិជ្ជកម្មយុត្តិធម៌</span>
+              <span class="dietary-tag">Non-GMO</span>
+            </div>
+          </div>
+
+          <div class="guide-card">
+            <div class="guide-card-icon">🧈</div>
+            <h3>ប៊័រ Normandy បារាំងបែបប្រពៃណី</h3>
+            <p>ប៊័របារាំងមានជាតិខ្លាញ់ទឹកដោះគោ ៨៤% ធ្វើឱ្យសាច់នំទន់ល្មើយរលាយក្នុងមាត់ និងក្រែមប៊័ររលោងស្រទន់មិនខាប់ក។</p>
+            <div class="dietary-tags">
+              <span class="dietary-tag">គោស៊ីស្មៅធម្មជាតិ</span>
+              <span class="dietary-tag">ប៊័រប្រពៃណី</span>
+            </div>
+          </div>
+
+          <div class="guide-card">
+            <div class="guide-card-icon">🌸</div>
+            <h3>គ្រាប់វ៉ានីឡា Tahiti ធម្មជាតិ</h3>
+            <p>ផ្លែវ៉ានីឡាធាត់ៗដែលពោរពេញដោយគ្រាប់វ៉ានីឡាខ្មៅល្អិតៗ ផ្តល់នូវក្លិនក្រអូបផ្កាឈើរីយ៉ាងពិសេស ខុសប្លែកពីវ៉ានីឡាសិប្បនិម្មិត។</p>
+            <div class="dietary-tags">
+              <span class="dietary-tag">គ្រាប់វ៉ានីឡាសុទ្ធ</span>
+              <span class="dietary-tag">កម្រិត Grade A</span>
+            </div>
+          </div>
+
+          <div class="guide-card">
+            <div class="guide-card-icon">🌱</div>
+            <h3>ផ្ទះបាយគិតគូរពីសុខភាព & អាឡែហ្ស៊ី</h3>
+            <p>ផ្តល់ជូនជម្រើសប្រើម្សៅអាល់ម៉ុនគ្មានជាតិ Gluten ដែលមានវិញ្ញាបនបត្រត្រឹមត្រូវ និងជម្រើសក្រែមដូងធម្មជាតិសម្រាប់អ្នកមិនញ៉ាំទឹកដោះគោ។</p>
+            <div class="dietary-tags">
+              <span class="dietary-tag">មានជម្រើសគ្មាន Gluten</span>
+              <span class="dietary-tag">សុវត្ថិភាពសម្រាប់អ្នកអាឡែហ្ស៊ី</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUR STORY & CRAFTSMANSHIP -->
+    <section class="story-section" id="story">
+      <div class="container story-grid">
+        <div class="story-content">
+          <span class="section-tagline" style="color: var(--caramel-gold-light); background: rgba(255,255,255,0.12);">ប្រវត្តិ និងកេរដំណែល</span>
+          <h2 class="section-title">ដុតនំដោយក្តីស្រឡាញ់ បំផុសគំនិតពីទីក្រុងប៉ារីស</h2>
+          <p class="section-desc">
+            បង្កើតឡើងក្នុងឆ្នាំ 2018 ដោយមេចុងភៅជំនាញផ្នែកនំលោក Laurent Dupont ហាង Velvet & Whisk កើតចេញពីជំនឿសាមញ្ញមួយ៖ នំខេកសម្រាប់កម្មវិធីពិសេសមិនត្រឹមតែស្រស់ស្អាតទាក់ភ្នែកប៉ុណ្ណោះទេ ប៉ុន្តែត្រូវតែមានរសជាតិដែលមិនអាចបំភ្លេចបាន។
+          </p>
+          <p class="section-desc">
+            សាច់នំនីមួយៗត្រូវបានដុតនៅព្រឹកព្រលឹមនៃថ្ងៃដឹកជញ្ជូនជូនលោកអ្នក។ យើងវាយក្រែម meringue ដោយដៃ ចម្អិនខារ៉ាមែលក្នុងខ្ទះទង់ដែងបុរាណ និងស្រោបតុបតែងមាសកាត់ ២៤ ការ៉ាត់លើផ្លែប៊ឺរីនីមួយៗដោយផ្ទាល់។
+          </p>
+
+          <div class="story-stats">
+            <div>
+              <div class="stat-number">14 ម៉ោង</div>
+              <div class="stat-label">ការរៀបចំ & ដុតនំយឺតៗ</div>
+            </div>
+            <div>
+              <div class="stat-number">0 %</div>
+              <div class="stat-label">គ្មានសារធាតុរក្សាទុក</div>
+            </div>
+            <div>
+              <div class="stat-number">50k+</div>
+              <div class="stat-label">កម្មវិធីអបអរដែលបានបម្រើ</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="story-card-visual">
+          <div class="story-quote-box">
+            <div class="story-quote-symbol">“</div>
+            <p class="story-quote-text">
+              នំខេកមួយមិនមែនត្រឹមតែស្ករ និងម្សៅនោះទេ វាជាបេះដូងដ៏ផ្អែមល្ហែមនៃការចងចាំមួយជីវិត។ នៅពេលបើកប្រអប់នំ ភាពអស្ចារ្យត្រូវតែចាប់ផ្តើមឡើង។
+            </p>
+            <div class="story-author">
+              <div class="author-avatar">LD</div>
+              <div>
+                <div class="author-name">Laurent Dupont</div>
+                <div class="author-role">មេចុងភៅជាន់ខ្ពស់ផ្នែកនំ & ស្ថាបនិក</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS & REVIEWS -->
+    <section class="reviews-section" id="reviews">
+      <div class="container">
+        <div style="text-align: center; max-width: 600px; margin: 0 auto 50px;">
+          <span class="section-tagline">ការស្រឡាញ់ពីអតិថិជន</span>
+          <h2 class="section-title">ការពេញចិត្តពីអតិថិជនជាទីស្រឡាញ់</h2>
+          <p class="section-desc" style="margin: 0 auto;">អាននូវរឿងរ៉ាវពិតពីកម្មវិធីខួបកំណើត ពិធីមង្គលការ និងខួបអាពាហ៍ពិពាហ៍ដែលបានទទួលការរៀបចំពី atelier របស់យើង។</p>
+        </div>
+
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-quote">
+              "នំ Nocturne Belgian Truffle គឺជាចំណុចលេចធ្លោបំផុតក្នុងកម្មវិធីខួបកំណើតគម្រប់ ៣០ ឆ្នាំរបស់គូដណ្តឹងខ្ញុំ! មិនផ្អែមខ្លាំងពេកទេ រសជាតិសូកូឡាដិតឆ្ងាញ់ ហើយកម្ទេចមាសធ្វើឱ្យនំមើលទៅដូចស្នាដៃសិល្បៈពិតៗ។"
+            </p>
+            <div class="review-user">
+              <div class="user-avatar-badge">SC</div>
+              <div class="user-meta">
+                <h4>Sophia Chen</h4>
+                <span>អតិថិជនពិតប្រាកដ · San Francisco</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-quote">
+              "យើងបានកម្ម៉ង់នំ Grand Royale ៣ ថ្នាក់សម្រាប់ពិធីជប់លៀងមង្គលការ។ ភ្ញៀវទាំង ១៤០ នាក់សរសើរមិនដាច់ពីមាត់ពេញមួយរាត្រី! ក្រែមស្រ្តប៊ឺរី chantilly ឆ្ងាញ់ដូចឋានសួគ៌។"
+            </p>
+            <div class="review-user">
+              <div class="user-avatar-badge">ME</div>
+              <div class="user-meta">
+                <h4>Marcus & Emily Vance</h4>
+                <span>ពិធីមង្គលការ · Napa Valley</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-quote">
+              "មុខងាររចនានំផ្ទាល់ខ្លួនលើគេហទំព័រនេះពិតជាអស្ចារ្យខ្លាំងណាស់។ ខ្ញុំបានរចនានំ matcha និង pistachio ជាមួយសារជូនពរផ្ទាល់ខ្លួន ហើយនំត្រូវបានដឹកមកដល់ក្នុងសភាពល្អឥតខ្ចោះ។ 10/10!"
+            </p>
+            <div class="review-user">
+              <div class="user-avatar-badge">AT</div>
+              <div class="user-meta">
+                <h4>Amara Taylor</h4>
+                <span>អតិថិជនពិតប្រាកដ · New York</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOUTIQUE VISIT & FAQ SECTION -->
+    <section class="visit-section" id="visit">
+      <div class="container visit-grid">
+        <!-- Atelier Info -->
+        <div class="store-card">
+          <span class="section-tagline">ទស្សនាផ្ទះបាយរបស់យើង</span>
+          <h3>ហាង Atelier Boutique & កន្លែងភ្លក្សរសជាតិ</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 24px;">
+            សូមអញ្ជើញមកកាន់ហាងដ៏ក្រអូបឈ្ងុយឈ្ងប់របស់យើង ដើម្បីភ្លក្សរសជាតិនំប្រចាំរដូវកាល ពិភាក្សាអំពីនំមង្គលការជាមួយមេចុងភៅ ឬមកទទួលយករនំដែលបានកក់ទុកជាមុន។
+          </p>
+
+          <div class="store-info-row">
+            <div class="store-icon">📍</div>
+            <div>
+              <h4 style="font-size: 0.95rem; color: var(--primary-espresso);">អាសយដ្ឋាន Atelier</h4>
+              <p style="font-size: 0.88rem; color: var(--text-muted);">482 Rue de Lafayette, Suite 101, Soho District</p>
+            </div>
+          </div>
+
+          <div class="store-info-row">
+            <div class="store-icon">⏰</div>
+            <div>
+              <h4 style="font-size: 0.95rem; color: var(--primary-espresso);">ម៉ោងបើកបម្រើការងារ</h4>
+              <p style="font-size: 0.88rem; color: var(--text-muted);">
+                ថ្ងៃអង្គារ – ថ្ងៃសៅរ៍: 8:00 ព្រឹក – 7:30 យប់<br />
+                ថ្ងៃអាទិត្យ: 9:00 ព្រឹក – 5:00 ល្ងាច (ថ្ងៃច័ន្ទ សម្រាកដើម្បីរៀបចំគ្រឿងផ្សំ)
+              </p>
+            </div>
+          </div>
+
+          <div class="store-info-row">
+            <div class="store-icon">📞</div>
+            <div>
+              <h4 style="font-size: 0.95rem; color: var(--primary-espresso);">ទំនាក់ទំនង & សេវាបម្រើអតិថិជន</h4>
+              <p style="font-size: 0.88rem; color: var(--text-muted);">atelier@velvetwhisk.com · +1 (800) 842-CAKE</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Accordion -->
+        <div>
+          <span class="section-tagline">សំណួរញឹកញាប់</span>
+          <h3 style="font-size: 1.8rem; color: var(--primary-espresso); margin-bottom: 24px;">អ្វីគ្រប់យ៉ាងដែលអ្នកគួរដឹង</h3>
+
+          <div class="faq-list">
+            <div class="faq-item open">
+              <button class="faq-question">
+                <span>តើខ្ញុំគួរកម្ម៉ង់នំទុកជាមុនប៉ុន្មានថ្ងៃ?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                សម្រាប់នំខេកហត្ថលេខា (Signature Cakes) យើងសូមណែនាំឱ្យកម្ម៉ង់ទុកមុនពី ២៤ ទៅ ៤៨ ម៉ោង។ សម្រាប់នំខេករចនាផ្ទាល់ខ្លួនច្រើនថ្នាក់ និងនំមង្គលការ សូមទុកពេលពី ៣ ទៅ ៧ ថ្ងៃ ដើម្បីឱ្យមេចុងភៅរបស់យើងមានពេលច្នៃក្បាច់ស្ករ និងរៀបចំផ្កាបានយ៉ាងល្អឥតខ្ចោះ។
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>តើនំខេកត្រូវបានដឹកជញ្ជូនយ៉ាងដូចម្តេចដើម្បីធានាសុវត្ថិភាព?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                នំនីមួយៗធ្វើដំណើរក្នុងរថយន្តដឹកជញ្ជូនដែលមានប្រព័ន្ធត្រជាក់គ្រប់គ្រងសីតុណ្ហភាព នៅក្នុងប្រអប់នំការពារការរលាក់ពិសេសជាមួយបាតទប់មិនឱ្យរអិល។ បុគ្គលិកដឹកជញ្ជូនរបស់យើងនឹងកាន់ប្រអប់នំដោយផ្ទាល់ដៃជូនដល់មាត់ទ្វាររបស់អ្នក។
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>តើខ្ញុំគួរទុកដាក់ និងកាត់នំទទួលទានយ៉ាងដូចម្តេច?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                សូមរក្សាទុកនំក្នុងទូទឹកកករហូតដល់ ១ ទៅ ២ ម៉ោងមុនពេលកាត់ទទួលទាន។ ការទទួលទានក្នុងសីតុណ្ហភាពបន្ទប់ធម្មតានឹងធ្វើឱ្យប៊័របារាំងនៅក្នុងសាច់នំ និងក្រែមប៊័រទន់ល្មើយរលាយក្នុងមាត់យ៉ាងឆ្ងាញ់ពិសា!
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>តើហាងមានជម្រើសសម្រាប់អ្នកមិនញ៉ាំ Gluten ឬបួស (Vegan) ដែរឬទេ?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                បាទ/ចាស មាន! នំ "Zen Uji Matcha" របស់យើង និងបន្ទប់រចនានំផ្ទាល់ខ្លួន ផ្តល់ជូនជម្រើសប្រើម្សៅអាល់ម៉ុនគ្មានជាតិ Gluten ដែលមានវិញ្ញាបនបត្រត្រឹមត្រូវ និងជម្រើសក្រែមដូង (Coconut Chantilly) សម្រាប់អ្នកមិនទទួលទានទឹកដោះគោ។
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand-logo" style="margin-bottom: 12px;">
+            <div class="brand-icon">🎂</div>
+            <div class="brand-text">
+              <span class="brand-name" style="color: #ffffff;">Velvet & Whisk</span>
+              <span class="brand-tag">ហាងនំប៉័ង & នំខេកបែបបារាំង</span>
+            </div>
+          </div>
+          <p>
+            បង្កើតនូវការចងចាំដ៏ផ្អែមល្ហែម តាមរយៈស្រទាប់នំដ៏ប្រណិតនីមួយៗ។ គ្រឿងផ្សំបារាំងសុទ្ធ វិធីសាស្ត្រច្នៃដោយដៃយ៉ាងហ្មត់ចត់ និងការប្តេជ្ញាចិត្តខ្ពស់ចំពោះរសជាតិ។
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">មាតិកាគេហទំព័រ</h4>
+          <ul class="footer-links">
+            <li><a href="#catalog">នំខេកហត្ថលេខា</a></li>
+            <li><a href="#builder">បន្ទប់រចនានំផ្ទាល់ខ្លួន</a></li>
+            <li><a href="#flavors">មគ្គុទ្ទេសក៍រសជាតិ</a></li>
+            <li><a href="#story">ប្រវត្តិ និងកេរដំណែល</a></li>
+            <li><a href="#visit">ទីតាំង & ម៉ោងបើក</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">កម្មវិធីពិសេស</h4>
+          <ul class="footer-links">
+            <li><a href="#builder">នំខេកខួបកំណើត</a></li>
+            <li><a href="#catalog">នំអាពាហ៍ពិពាហ៍ថ្នាក់ធំ</a></li>
+            <li><a href="#catalog">កាដូសម្រាប់ក្រុមហ៊ុន & ដៃគូ</a></li>
+            <li><a href="#flavors">សុខភាព & គ្មាន Gluten</a></li>
+            <li><a href="#visit">ការពិគ្រោះ & ភ្លក្សរសជាតិ</a></li>
+          </ul>
+        </div>
+
+        <div class="newsletter-box">
+          <h4 class="footer-title">ក្លឹបអ្នកស្រឡាញ់បង្អែម</h4>
+          <p>ចុះឈ្មោះក្នុងបញ្ជីភ្ញៀវពិសេសរបស់យើង ដើម្បីទទួលបានដំណឹងអំពីមីនុយសម្ងាត់ប្រចាំរដូវកាល និងការបញ្ចុះតម្លៃ ១០% សម្រាប់ការកម្ម៉ង់ដំបូង។</p>
+          <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+            <input type="email" required placeholder="បញ្ចូលអ៊ីមែលរបស់អ្នក..." />
+            <button type="submit" class="btn btn-primary" style="padding: 10px 18px; font-size: 0.85rem;">ចុះឈ្មោះ</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Velvet & Whisk Patisserie Atelier. រក្សាសិទ្ធិគ្រប់យ៉ាង។</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="#" style="color: rgba(255,255,255,0.6);">គោលការណ៍ឯកជនភាព</a>
+          <a href="#" style="color: rgba(255,255,255,0.6);">លក្ខខណ្ឌប្រើប្រាស់</a>
+          <a href="#" style="color: rgba(255,255,255,0.6);">ព័ត៌មានជាតិអាឡែហ្ស៊ី</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SLIDE-OVER SHOPPING BAG DRAWER -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <h3>កន្ត្រកកម្ម៉ង់របស់អ្នក</h3>
+      <button class="cart-close-btn" onclick="closeCartDrawer()">&times;</button>
+    </div>
+
+    <!-- Free Chilled Shipping Indicator -->
+    <div class="free-shipping-progress">
+      <div id="shipping-notice">បន្ថែម $80 ទៀត ដើម្បីទទួលបានសេវាដឹកជញ្ជូនត្រជាក់ដោយឥតគិតថ្លៃ!</div>
+      <div class="progress-track">
+        <div class="progress-bar" id="shipping-progress"></div>
+      </div>
+    </div>
+
+    <!-- Dynamic Item Container -->
+    <div class="cart-items-list" id="cart-items-container">
+      <!-- Generated by app.js -->
+    </div>
+
+    <!-- Drawer Footer -->
+    <div class="cart-footer">
+      <div class="cart-subtotal-row">
+        <span>តម្លៃទំនិញសរុប</span>
+        <span id="cart-subtotal">$0.00</span>
+      </div>
+      <div class="cart-total-row">
+        <span>តម្លៃសរុបទាំងអស់</span>
+        <span id="cart-total">$0.00</span>
+      </div>
+      <button class="btn btn-primary" style="width: 100%;" onclick="openCheckout()">
+        បន្តទៅការទូទាត់ប្រាក់ →
+      </button>
+    </div>
+  </aside>
+
+  <!-- QUICK VIEW PRODUCT MODAL -->
+  <div class="modal-overlay" id="quick-view-modal">
+    <div class="modal-container">
+      <button class="modal-close-btn" onclick="closeQuickView()">&times;</button>
+      <div class="modal-content-padding" id="quick-view-content">
+        <!-- Injected via openQuickView() in app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- CHECKOUT SIMULATION MODAL -->
+  <div class="modal-overlay" id="checkout-modal">
+    <div class="modal-container">
+      <button class="modal-close-btn" onclick="closeCheckout()">&times;</button>
+      <div class="modal-content-padding" id="checkout-modal-body">
+        <!-- Injected via openCheckout() in app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Application Logic -->
+  <script src="js/app.js"></script>
+</body>
+</html>
